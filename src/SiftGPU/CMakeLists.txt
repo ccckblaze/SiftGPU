@@ -17,7 +17,7 @@ IF(SIFTGPU_ENABLE_SSE)
 ENDIF(SIFTGPU_ENABLE_SSE)
  
 IF(SIFTGPU_ENABLE_NEON)
-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfloat-abi=softfp -mfpu=neon -ftree-vectorize -ffast-math" )
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -mfloat-abi=hard -mcpu=cortex-a53 -mtune=cortex-a53 -mfpu=neon-vfpv4" )
 ENDIF(SIFTGPU_ENABLE_SSE)
  
 IF(SIFTGPU_PREFER_GLUT)
